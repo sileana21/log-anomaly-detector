@@ -13,6 +13,20 @@ fetch("/alerts")
             alert.user + " | Severity: " +
             alert.severity;
 
+        // severity styling
+        if (alert.severity === "MEDIUM") {
+            item.style.color = "orange";
+        }
+
+        if (alert.severity === "HIGH") {
+            item.style.color = "red";
+        }
+
+        if (alert.severity === "CRITICAL") {
+            item.style.color = "darkred";
+            item.style.fontWeight = "bold";
+        }
+
         list.appendChild(item);
 
     });
